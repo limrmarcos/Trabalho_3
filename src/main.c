@@ -15,7 +15,7 @@ int nodeDepth( TreeNode* root, int value, int depth );
 bool isCousins( TreeNode* root, int x, int y );
 void destroy( TreeNode* root );
 //TreeNode* insert( TreeNode* root, int value );
-TreeNode* newNode (int value);
+TreeNode* newNode( int value );
 
 int main( void ) {
     TreeNode* root = newNode( 1 );
