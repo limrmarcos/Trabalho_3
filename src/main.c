@@ -14,40 +14,39 @@ bool isSibling( TreeNode* root, int a, int b );
 int nodeDepth( TreeNode* root, int value, int depth );
 bool isCousins( TreeNode* root, int x, int y );
 void destroy( TreeNode* root );
-TreeNode* insert( TreeNode* root, int value );
-TreeNode* newNode (int data);
+//TreeNode* insert( TreeNode* root, int value );
+TreeNode* newNode (int value);
 
 int main( void ) {
-    TreeNode* root = newNode(1);
+    TreeNode* root = newNode( 1 );
 
-    root->left = newNode(2);
-    root->left->right = newNode(4);
-    root->right = newNode(3);
-    root->right->right = newNode(5);
+    root->left = newNode( 2 );
+    root->left->right = newNode( 4 );
+    root->right = newNode( 3 );
+    root->right->right = newNode( 5 );
 
     int x = 5, y = 4;
 
     bool test = isCousins(root, x, y);
-    printf("%s\n", test ? "True!" : "False!");
+    printf( "%s\n", test ? "True!" : "False!" );
 
     destroy( root );
 }
 
-TreeNode* newNode(int data) {
-    TreeNode *Node = (TreeNode*)malloc(sizeof(TreeNode));
-    Node->val = data;
-    Node->left = NULL;
-    Node->right = NULL;
+TreeNode* newNode( int value ) {
+    TreeNode *newNode = ( TreeNode* ) malloc ( sizeof( TreeNode ));
+    newNode->val = value;
+    newNode->left = NULL;
+    newNode->right = NULL;
 
-    return Node;
+    return newNode;
 }
-
 
 int nodeDepth( TreeNode* root, int value, int depth ) {
     if( root == NULL ) {
         return -1;
     }
-    if (root->val == value) {
+    if( root->val == value ) {
         return depth;
     }
     
@@ -65,13 +64,13 @@ bool isSibling( TreeNode* root, int a, int b) {
         return false;
     }
 
-    if (root->left != NULL && root->right != NULL) {
-        if ((root->left->val == a && root->right->val == b) ||
-            (root->left->val == b && root->right->val == a)) {
+    if( root->left != NULL && root->right != NULL ) {
+        if(( root->left->val == a && root->right->val == b ) ||
+            ( root->left->val == b && root->right->val == a )) {
             return true;
         }
     }
-    return isSibling(root->left, a, b) || isSibling(root->right, a, b);
+    return isSibling( root->left, a, b ) || isSibling( root->right, a, b );
 }
 
 bool isCousins( TreeNode* root, int x, int y ) {
