@@ -8,3 +8,7 @@
 
 ## Problema:
 <p>A partir de dois valores deve ser testado se dois nodos na árvore são primos tendo certeza que não os nodos da árvore não são irmãos e estão no mesmo nível.</p>
+
+## Links:
+<p>Link para o vídeo:</p>
+<p>https://drive.google.com/file/d/1KyayAIKR_L0bNroDE9jowxdGS4LpXLrm/view?usp=drive_link</p>
