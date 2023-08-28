@@ -59,7 +59,7 @@ int nodeDepth( TreeNode* root, int value, int depth ) {
     return rightDepth;
 }
 
-bool isSibling( TreeNode* root, int a, int b) {
+bool isSibling( TreeNode* root, int a, int b ) {
     if( root == NULL ){
         return false;
     }
